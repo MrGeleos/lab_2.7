@@ -4,16 +4,15 @@
 if __name__ == "__main__":
     u = set("abcdefghijklmnopqrstuvwxyz")
 
-    a = {"a", "h", "k"}
-    b = {"c", "d", "h", "p", "r"}
-    c = {"h", "i", "s"}
-    d = {"c", "g", "j", "u", "v"}
+    a = {"b", "f", "g", "m", "o"}
+    b = {"b", "g", "h", "l", "u"}
+    c = {"e", "f", "m"}
+    d = {"e", "g", "l", "p", "q", "u", "v"}
 
-    x = (a.union(b)).intersection(c)
+    x = (a.intersection(c)).union(b)
     print(f"x = {x}")
 
-    an = u.difference(a)
     bn = u.difference(b)
 
-    y = (an.intersection(bn)).difference(c.union(d))
+    y = (a.intersection(bn)).union(c.difference(d))
     print(f"y = {y}")
